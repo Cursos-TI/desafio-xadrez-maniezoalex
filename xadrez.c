@@ -4,25 +4,53 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+void bispo(int movimentos){
+    for (int limite =1; limite <= movimentos;){
+
+        for(int i = movimentos, j = 1; j <= i ; i--){
+            printf("Cima\n");
+        }
+        bispo(movimentos-1);
+        printf("Direita\n");
+    }
+}
+    
+
+
+void torre(int movimentos){
+    int limite = 1;
+    if (limite<=movimentos){
+        printf("Cima\n");
+        printf("Direita\n");
+        torre(movimentos-1);
+    }
+}
+    void rainha(int movimentos){
+        int limite = 1;
+        if (limite<=movimentos){
+            printf("Cima\n");
+            printf("Direita\n");
+            rainha(movimentos-1);
+        }
+        
+        
+}
 
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    int torre, bispo, rainha, cavaloHorizontal, cavaloVertical;
+    
     //introdução para o código não ficar jogador
     printf("*Vamos mover as peças*\n\n");
 
-    // Implementação de Movimentação do Bispo
+    // Recursivo Bispo
 
-    for (bispo = 1; bispo < 6; bispo++){
-        printf("Cima\n");
-        printf("Direita\n");
-        }
-
-        printf("\nAgora os movimentos da Torre\n");
+    bispo(6);
+    
         
 
-    // Implementação de Movimentação da Torre
+    /*
+    / Implementação de Movimentação da Torre
     for (torre = 1; torre < 6; torre++){
         printf("Direita\n");
        
@@ -59,5 +87,7 @@ int main() {
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
 
-    return 0;
+*/
+
+return 0;
 }
